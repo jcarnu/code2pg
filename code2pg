@@ -4364,8 +4364,7 @@ sub main {
 
         # Sed is adding ^M on the files I tried. We remove them.
         if ( $modified_file == 1 ) {
-            my $sed_res = `sed -i 's/
-//g' "$file"`;
+            my $sed_res = `sed -i 's/\r//g' "$file"`;
         }
     }
     print "\rDone !                                                     \n" if (!$quiet_exec);
